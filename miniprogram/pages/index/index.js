@@ -46,9 +46,56 @@ Page({
     }
   },
 
+  sum(){
+    wx.cloud.callFunction({
+      name: "sum",
+      data: {
+        a:2,
+        b:2
+      }
+      
+    }).then(res=>{
+      this.setData({
+        sumRes: res.result.res
+      })
+    }).catch(err=>{
+      this.setData({
+        sumRes: err
+      })
+    })
+  },
+
+  delete(){
+    wx.cloud.callFunction({
+      name: "delete"
+    }).then(r=>{
+      console.log(r);
+    }).catch(err=>{
+      console.log(err);
+    })
+  },
+
+  saveImg(){
+    // 让用户选择一张图片
+    wx.chooseImage({
+      success: chooseResult => {
+        // 将图片上传至云存储空间
+        wx.cloud.uploadFile({
+          // 指定上传到的云路径
+          cloudPath: 'my-photo.png',
+          // 指定要上传的文件的小程序临时文件路径
+          filePath: chooseResult.tempFilePaths[0],
+          // 成功回调
+          success: res => {
+            console.log('上传成功', res)
+          },
+        })
+      },
+    })
+  },
+
   onGetOpenid: function() {
     // 调用云函数
-    debugger
     wx.cloud.callFunction({
       name: 'login',
       data: {},
