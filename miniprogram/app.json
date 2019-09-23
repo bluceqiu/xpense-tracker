@@ -12,7 +12,11 @@
     "pages/openapi/callback/callback",
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
-    "pages/im/room/room"
+    "pages/im/room/room",
+    "pages/check",
+    "pages/check/check",
+    "pages/add/add",
+    "pages/preset/preset"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -21,5 +25,34 @@
     "navigationBarTitleText": "云开发 QuickStart",
     "navigationBarTextStyle": "black"
   },
+  "networkTimeout": {
+    "request": 35000
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#3477CE",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/check/check",
+        "text": "CHECK",
+        "iconPath": "/static/images/tabbar/home.png",
+        "selectedIconPath": "/static/images/tabbar/homeActive.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "/static/images/tabbar/category.png",
+        "selectedIconPath": "/static/images/tabbar/categoryActive.png"
+      },
+      {
+        "pagePath": "pages/o2oshopcart/o2oshopcart",
+        "text": "PRESET",
+        "iconPath": "/static/images/tabbar/shop.png",
+        "selectedIconPath": "/static/images/tabbar/shopActive.png"
+      }
+    ]
+  },
+  "debug": true,
   "sitemapLocation": "sitemap.json"
 }
