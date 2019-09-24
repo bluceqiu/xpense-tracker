@@ -1,2 +1,31 @@
-<!--miniprogram/pages/add/add.wxml-->
-<text>miniprogram/pages/add/add.wxml</text>
+<div class="add-page">
+    <div wx:if="{{status === '1'}}">
+        <van-button plain hairline type="primary" round bind:click="newGroup">
+            <van-icon name="paid" />
+            新建账本
+        </van-button>
+        <van-button plain hairline type="primary" round bind:click="newRecord">
+            <van-icon name="records" />
+            新建记录
+        </van-button>
+    </div>
+
+    <div wx:if="{{status === '2'}}">
+        <van-field
+            value="{{ groupName }}"
+            label="组名"
+            placeholder="请输入组名"
+            error
+        />
+    </div>
+
+    <div wx:if="{{status === '3'}}">
+        <van-field
+            value="{{ record }}"
+            label="记录"
+            placeholder="请输入记录"
+            error
+        />
+    </div>
+    
+</div>

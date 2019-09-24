@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    status: 1,
+    groupName: 'groupName'
   },
 
   /**
@@ -27,6 +28,15 @@ Page({
    */
   onShow: function () {
 
+  },
+
+  newGroup(){
+    debugger
+
+  },
+
+  newRecord(){
+    debugger
   },
 
   /**

@@ -1,1 +1,14 @@
-/* miniprogram/pages/add/add.wxss */
+page {
+  height: 100%;
+}
+
+.add-page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-page button {
+  margin: 20rpx;
+}
