@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/add/add",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
     "pages/databaseGuide/databaseGuide",
@@ -15,7 +15,6 @@
     "pages/im/room/room",
     "pages/check",
     "pages/check/check",
-    "pages/add/add",
     "pages/preset/preset"
   ],
   "window": {
