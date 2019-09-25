@@ -9,16 +9,9 @@
             新建记录
         </van-button>
     </div>
-
     <div wx:if="{{status == '2'}}">
-        <van-field
-            value="{{ groupName }}"
-            label="组名"
-            placeholder="请输入组名"
-            error
-        />
+        <van-field value="{{ groupName }}" label="组名" placeholder="请输入组名" error />
     </div>
-
     <div wx:if="{{status == '3'}}">
         <van-radio-group value="{{ radio }}" bind:change="radioChange">
             <van-radio name="1">日常饮食</van-radio>
@@ -28,15 +21,10 @@
             <van-radio name="5">旅游</van-radio>
             <van-radio name="6">交通</van-radio>
         </van-radio-group>
-
-          <van-field
-            value="{{ money }}"
-            placeholder="请输入金额"
-            border=true
-            bind:blur="moneyChange"
-        />
-        
-        <van-button type="default" plain hairline round bind:click="confirm">确定</van-button>
+        <van-field value="{{ money }}" label="金额" type="input" placeholder="请输入金额" autosize border="{{ false }}" />
+        <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" size="large" round bind:click="confirm">
+            <van-icon name="records" />
+            选好了
+        </van-button>
     </div>
-    
 </div>

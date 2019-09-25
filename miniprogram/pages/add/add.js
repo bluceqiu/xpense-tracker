@@ -1,4 +1,12 @@
 // miniprogram/pages/add/add.js
+const TYPELIST = {
+  1: "日常饮食",
+  2: "生活用品",
+  3: "固定支出",
+  4: "网购",
+  5: "旅游",
+  6: "交通"
+}
 Page({
 
   /**
@@ -7,7 +15,6 @@ Page({
   data: {
     status: 3,
     groupName: 'groupName',
-
     radio: '1'
   },
 
@@ -34,7 +41,7 @@ Page({
 
   newGroup(){
     debugger
-
+    
   },
 
   newRecord(){
@@ -59,7 +66,8 @@ Page({
     const db = wx.cloud.database()
     db.collection("records").add({
       data: {
-        'recordType': this.radio,
+        'typeText': TYPELIST[this.radio],
+        'type': this.radio,
         'money': this.money
       }
     }).then(res=>{

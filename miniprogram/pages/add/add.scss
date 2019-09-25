@@ -3,10 +3,14 @@ page{
 }
 .add-page{
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    .van-radio {
+        margin-bottom: 40rpx;
+    }
     button{
-        margin: 20rpx;
+        margin-top: 40rpx;
     }
 }

@@ -1,19 +1,7 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/add/add",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room",
-    "pages/check",
     "pages/check/check",
     "pages/preset/preset"
   ],
@@ -27,31 +15,7 @@
   "networkTimeout": {
     "request": 35000
   },
-  "tabBar": {
-    "color": "#666666",
-    "selectedColor": "#3477CE",
-    "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/check/check",
-        "text": "",
-        "iconPath": "assets/images/tabbar/check-grey.png",
-        "selectedIconPath": "/assets/images/tabbar/check.png"
-      },
-      {
-        "pagePath": "pages/add/add",
-        "text": "",
-        "iconPath": "/assets/images/tabbar/add-grey.png",
-        "selectedIconPath": "/assets/images/tabbar/add.png"
-      },
-      {
-        "pagePath": "pages/preset/preset",
-        "text": "",
-        "iconPath": "/assets/images/tabbar/preset-grey.png",
-        "selectedIconPath": "/assets/images/tabbar/preset.png"
-      }
-    ]
-  },
+
   "debug": true,
   "sitemapLocation": "sitemap.json"
 }

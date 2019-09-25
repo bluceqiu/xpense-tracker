@@ -4,11 +4,16 @@ page {
 
 .add-page {
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.add-page .van-radio {
+  margin-bottom: 40rpx;
+}
+
 .add-page button {
-  margin: 20rpx;
+  margin-top: 40rpx;
 }
