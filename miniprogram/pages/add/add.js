@@ -5,8 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    status: 1,
-    groupName: 'groupName'
+    status: 3,
+    groupName: 'groupName',
+
+    radio: '1'
   },
 
   /**
@@ -36,7 +38,56 @@ Page({
   },
 
   newRecord(){
-    debugger
+    this.setData({
+      status: 3
+    });
+  },
+
+  radioChange(e){
+    this.setData({
+      radio: e.detail
+    })
+  },
+
+  moneyChange(e){
+    this.setData({
+      money: e.detail.value
+    });
+  },
+
+  confirm(e){
+    const db = wx.cloud.database()
+    db.collection("records").add({
+      data: {
+        'recordType': this.radio,
+        'money': this.money
+      }
+    }).then(res=>{
+      wx.showToast({
+        title: '成功',
+        icon: 'success',
+        duration: 2000
+      })
+    }).catch(err=>{
+      wx.showToast({
+        title: '新增失败',
+        icon: 'fail',
+        duration: 2000
+      })
+    })
+
+    // wx.cloud.callFunction({
+    //   name: "addRecord",
+    //   data: {
+    //     'recordType': this.radio,
+    //     'money': this.money
+    //   }
+      
+    // }).then(res=>{
+    //   console.log(res);
+    // }).catch(err=>{
+    //   console.log(err);
+    // })
   },
 
   /**

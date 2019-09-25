@@ -6,12 +6,22 @@ cloud.init()
 const db = cloud.database();
 
 // 云函数入口函数
-exports.main = async (event, context) => {
+exports.main = (event, context) => {
   try{
-    await db.collection("user").where({
-      name: 'jerry'
-    }).remove();
+    // await db.collection("user").where({
+    //   name: 'jerry'
+    // }).remove();
+
+    // db.collection("user").add({
+    //   data: {
+    //    name:1
+    //   },
+    //   success: res=>{
+    //     debugger
+    //   }
+    // });
+
   }catch(err){
-    console.log(err);
+    console.log('err', err);
   }
 }

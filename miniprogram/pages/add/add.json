@@ -2,6 +2,8 @@
   "usingComponents": {
     "van-button": "vant-weapp/button",
     "van-icon": "vant-weapp/icon",
-    "van-field": "vant-weapp/field"
+    "van-field": "vant-weapp/field",
+    "van-radio": "vant-weapp/radio",
+    "van-radio-group": "vant-weapp/radio-group"
   }
 }
