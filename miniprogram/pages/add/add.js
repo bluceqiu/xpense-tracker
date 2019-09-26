@@ -15,7 +15,8 @@ Page({
   data: {
     status: 3,
     groupName: 'groupName',
-    radio: '1'
+    radio: '1',
+    // money: ''
   },
 
   /**
@@ -58,24 +59,39 @@ Page({
 
   moneyChange(e){
     this.setData({
-      money: e.detail.value
+      money: e.detail
     });
   },
 
   confirm(e){
+    if(!this.data.money){
+      wx.showToast({
+        title: "请输入有效金额",
+        icon: 'none',
+        duration: 2000
+      });
+      console.log("请输入有效金额");
+      return
+    }
     const db = wx.cloud.database()
     db.collection("records").add({
       data: {
-        'typeText': TYPELIST[this.radio],
-        'type': this.radio,
-        'money': this.money
+        'typeText':TYPELIST[this.data.radio],
+        'type': this.data.radio,
+        'money': this.data.money
       }
     }).then(res=>{
       wx.showToast({
         title: '成功',
         icon: 'success',
-        duration: 2000
+        mask: true,
+        duration: 2000,
+        success:()=>{
+          setTimeout(()=>{wx.navigateBack()}, 2000)
+        }
       })
+
+      
     }).catch(err=>{
       wx.showToast({
         title: '新增失败',

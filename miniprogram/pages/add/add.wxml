@@ -21,7 +21,7 @@
             <van-radio name="5">旅游</van-radio>
             <van-radio name="6">交通</van-radio>
         </van-radio-group>
-        <van-field value="{{ money }}" label="金额" type="input" placeholder="请输入金额" autosize border="{{ false }}" />
+        <van-field value="{{ money }}" label="金额" type="input" placeholder="请输入金额" autosize border="{{ false }}" bind:input="moneyChange"/>
         <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" size="large" round bind:click="confirm">
             <van-icon name="records" />
             选好了

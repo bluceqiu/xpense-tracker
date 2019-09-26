@@ -26,7 +26,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getRecords();
+  },
 
+  getRecords(){
+    const db = wx.cloud.database()
+    db.collection('records').where({
+      _openid: 'xxx' // 填入当前用户 openid
+    }).get().then(res => {
+      console.log(res.data)
+    })
   },
 
   /**
