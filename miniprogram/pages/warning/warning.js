@@ -1,11 +1,16 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/warning/warning.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    warning_type1: '',
+    warning_type2: '',
+    warning_type3: '',
+    warning_type4: '',
+    warning_type5: '',
+    warning_type6: '',
   },
 
   /**
@@ -29,35 +34,15 @@ Page({
 
   },
 
-  add(){
-    wx.navigateTo({
-      url: "/pages/add/add"
-    });
-  },
-
-  check(){
-    wx.navigateTo({
-      url: "/pages/check/check"
-    });
-  },
-
-  setWarning(){
-    wx.navigateTo({
-      url: "/pages/warning/warning"
-    });
-  },
-
-  clear(){
-    wx.cloud.callFunction({
-      name: "clear"
-    }).then(res=>{
-      console.log(res);
-        wx.showToast({
-          title: "清除成功"
-        });
-    }).catch(err=>{
-      console.log(err);
+  moneyChange(e){
+    const {type} = e.currentTarget.dataset;
+    this.setData({
+      [`warning_type${type}`]: e.detail 
     })
+  },
+
+  save(){
+    
   },
 
   /**

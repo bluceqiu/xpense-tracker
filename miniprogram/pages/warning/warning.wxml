@@ -1,0 +1,66 @@
+<view>
+    <van-field 
+        data-type="1"
+        value="{{ warning_type1 }}" 
+        label="日常饮食" 
+        type="input" 
+        placeholder="请输入预警值" 
+        autosize 
+        border="{{ false }}" 
+        bind:input="moneyChange"/>
+
+    <van-field 
+        data-type="2"
+        value="{{ warning_type2 }}" 
+        label="生活用品" 
+        type="input" 
+        placeholder="请输入预警值" 
+        autosize 
+        border="{{ false }}" 
+        bind:input="moneyChange"/>
+
+    <van-field 
+        data-type="3"
+        value="{{ warning_type3 }}" 
+        label="固定支出" 
+        type="input" 
+        placeholder="请输入预警值" 
+        autosize 
+        border="{{ false }}" 
+        bind:input="moneyChange"/>
+
+    <van-field 
+        data-type="4"
+        value="{{ warning_type4 }}" 
+        label="网购" 
+        type="input" 
+        placeholder="请输入预警值" 
+        autosize 
+        border="{{ false }}" 
+        bind:input="moneyChange"/>
+
+    <van-field 
+        data-type="5"
+        value="{{ warning_type5 }}" 
+        label="旅游" 
+        type="input" 
+        placeholder="请输入预警值" 
+        autosize 
+        border="{{ false }}" 
+        bind:input="moneyChange"/>
+
+    <van-field 
+        data-type="6"
+        value="{{ warning_type6 }}" 
+        label="交通" 
+        type="input" 
+        placeholder="请输入预警值" 
+        autosize 
+        border="{{ false }}" 
+        bind:input="moneyChange"/>
+
+    <van-button color="linear-gradient(to right, #4bb0ff, #6149f6)" size="large" round bind:click="save">
+        <van-icon name="smile-o" />
+        保存
+    </van-button>
+</view>

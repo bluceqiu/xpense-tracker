@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "汇总",
   "usingComponents": {
-    "van-cell": "vant-weapp/cell",
-    "van-cell-group": "vant-weapp/cell-group"
+    "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index"
   }
 }
