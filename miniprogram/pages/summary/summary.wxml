@@ -1,0 +1,8 @@
+<!-- <view>
+    <span>{{item.typeText}}</span>
+    <span>{{item.sum}}</span>
+</view> -->
+<van-cell-group>
+    <van-cell title="类目" value="总计" />
+    <van-cell wx:for="{{summary}}" :key="index" title="{{item.typeText}}" value="{{item.sum}}" />
+</van-cell-group>

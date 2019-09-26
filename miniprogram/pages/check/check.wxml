@@ -1,2 +1,20 @@
-<!--miniprogram/pages/check/check.wxml-->
-<text>miniprogram/pages/check/check.wxml</text>
+<scorll-view>
+    <view wx:if="{{recordList.length > 0}}">
+        <view class="record-item">
+            <span>类型</span>
+            <span>金额</span>
+            <span>时间</span>
+        </view>
+        <view class="record-item" wx:for="{{ recordList }}" :key="index" :data-type="{{item.type}}">
+            <span class="left">{{ item.typeText }}</span>
+            <span class="center">{{ item.money }}</span>
+            <span class="right">{{ item.recordTime }}</span>
+        </view>
+    </view>
+    <view wx:else> 暂无数据 </view>
+
+    <van-button  color="linear-gradient(to right, #4bb0ff, #6149f6)" size="large" round bind:click="summary">
+        <van-icon name="smile-o" />
+        查看汇总
+    </van-button>
+</scorll-view>

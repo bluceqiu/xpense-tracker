@@ -41,6 +41,19 @@ Page({
     });
   },
 
+  clear(){
+    wx.cloud.callFunction({
+      name: "clear"
+    }).then(res=>{
+      console.log(res);
+        wx.showToast({
+          title: "清除成功"
+        });
+    }).catch(err=>{
+      console.log(err);
+    })
+  },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

@@ -8,4 +8,9 @@
         <van-icon name="smile-o" />
         查看记录
     </van-button>
+
+    <van-button  color="linear-gradient(to right, #4bb0ff, #6149f6)" size="large" round bind:click="clear">
+        <van-icon name="smile-o" />
+        清空记录
+    </van-button>
 </div>

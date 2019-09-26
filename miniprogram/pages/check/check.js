@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    recordList: []
   },
 
   /**
@@ -29,13 +29,37 @@ Page({
     this.getRecords();
   },
 
+  // onGetOpenid: function() {
+  //   // 调用云函数
+  //   wx.cloud.callFunction({
+  //     name: 'login',
+  //     data: {},
+  //     success: res => {
+  //       console.log('[云函数] [login] user openid: ', res.result.openid)
+  //       app.globalData.openid = res.result.openid
+  //     },
+  //     fail: err => {
+  //       console.error('[云函数] [login] 调用失败', err)
+  //     }
+  //   })
+  // },
+
   getRecords(){
     const db = wx.cloud.database()
     db.collection('records').where({
-      _openid: 'xxx' // 填入当前用户 openid
+      _openid: 'oDnA_5aCk6e3aQ6v1LKgJVsXp5n0' // 填入当前用户 openid
     }).get().then(res => {
       console.log(res.data)
+      this.setData({
+        recordList: res.data
+      })
     })
+  },
+
+  summary(){
+   wx.navigateTo({
+     url: "/pages/summary/summary"
+   });
   },
 
   /**

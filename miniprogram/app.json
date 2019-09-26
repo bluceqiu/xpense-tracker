@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/add/add",
     "pages/check/check",
-    "pages/preset/preset"
+    "pages/preset/preset",
+    "pages/summary/summary"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -15,7 +16,6 @@
   "networkTimeout": {
     "request": 35000
   },
-
   "debug": true,
   "sitemapLocation": "sitemap.json"
 }

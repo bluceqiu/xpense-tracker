@@ -1,12 +1,5 @@
-// miniprogram/pages/add/add.js
-const TYPELIST = {
-  1: "日常饮食",
-  2: "生活用品",
-  3: "固定支出",
-  4: "网购",
-  5: "旅游",
-  6: "交通"
-}
+import {TYPELIST} from "../../common/const"
+import { formatDateTime } from '../../common/tool'
 Page({
 
   /**
@@ -78,7 +71,8 @@ Page({
       data: {
         'typeText':TYPELIST[this.data.radio],
         'type': this.data.radio,
-        'money': this.data.money
+        'money': this.data.money,
+        "recordTime": formatDateTime(new Date())
       }
     }).then(res=>{
       wx.showToast({
