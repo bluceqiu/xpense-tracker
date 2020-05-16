@@ -1,5 +1,8 @@
 import {TYPELIST} from "../../common/const"
 import { formatDateTime } from '../../common/tool'
+import QQMapWX from '../../lib/qqmap-wx-jssdk.min'
+let qqmapsdk;
+
 Page({
 
   /**
@@ -16,7 +19,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.initMap();
 
+    // 实例化API核心类
+    qqmapsdk = new QQMapWX({
+        key: '2ALBZ-2QBLP-MP7DF-VDF56-ZCI3O-RYFCF'
+    });
   },
 
   /**
@@ -30,7 +38,50 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // qqmapsdk.search({
+    //     keyword: '酒店', // 不能为空
+    //     success: function (res) {
+    //         console.log(res);
+    //     },
+    //     fail: function (res) {
+    //         console.log(res);
+    //     },
+    //     complete: function (res) {
+    //         console.log(res);
+    //     }
+    // })
 
+    qqmapsdk.reverseGeocoder({
+      get_poi: 1, // 周边地址列表
+      success(res){
+        console.log(res)
+      },
+      fail(err){
+        console.log(err)
+      }
+    })
+  },
+
+  initMap(){
+    wx.getLocation({
+      type: 'gcj02',
+      success (res) {
+        console.log("位置信息：", res);
+        const latitude = res.latitude
+        const longitude = res.longitude
+        const speed = res.speed
+        const accuracy = res.accuracy
+
+        wx.openLocation({
+          latitude,
+          longitude,
+          success(r){
+            // console.log("打开地图选择位置结果：", r)
+          }
+        })
+
+      }
+     })
   },
 
   newGroup(){
